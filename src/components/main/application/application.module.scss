@@ -1,0 +1,101 @@
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/breakpoints';
+
+.applicationContainer{
+  background-color: colors.$black14;
+  padding-top: 67px;
+  padding-bottom: 67px;
+
+
+  @include breakpoints.desktop{
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+
+  @include breakpoints.mobile{
+    padding-top: 15px;
+    padding-bottom: 21px;
+  }
+
+}
+
+.applicationContentWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  @include breakpoints.desktop{
+    gap: 16px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 18px;
+  }
+  @include breakpoints.mobile{
+    gap: 12px;
+  }
+
+
+}
+
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  @include breakpoints.desktop{
+    gap: 26px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 16px;
+  }
+  @include breakpoints.mobile{
+    gap: 12px;
+
+  }
+}
+.title{
+  @include fontsFamilies.FontFamilyTttravelsExtrabold;
+  font-size: 64px;
+  @include breakpoints.desktop{
+    font-size: 32px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 23px;
+  }
+  @include breakpoints.mobile{
+    font-size: 16px;
+  }
+
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  text-align: center;
+  @include breakpoints.desktop{
+    font-size: 20px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 15px;
+  }
+  @include breakpoints.mobile{
+    font-size: 12px;
+  }
+}
+.button{
+  @include breakpoints.desktop{
+    font-size: 14px;
+    padding: 10px 40px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 12px;
+    padding: 10px 30px;
+
+  }
+  @include breakpoints.mobile{
+    font-size: 10px;
+    padding: 8px 30px;
+  }
+
+
+}

@@ -1,0 +1,103 @@
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/helpers';
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/breakpoints';
+
+.shopWrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+
+
+  &::after{
+    content: '';
+    background: colors.$black url("@assets/images/shopBg.svg") no-repeat;
+    background-position: center center;
+    z-index: -10;
+
+    @include helpers.contain;
+
+    @include breakpoints.desktop_extra_small{
+      background: colors.$black url("@assets/images/shopBg1000.svg") no-repeat;
+      background-position: center center;
+
+    }
+
+    @include breakpoints.tablet_small{
+      background: colors.$black url("@assets/images/shopBg768.svg") no-repeat;
+      background-position: center center;
+    }
+    @include breakpoints.mobile_small{
+      background: colors.$black url("@assets/images/shopBg360.svg") no-repeat;
+      background-position: center center;
+    }
+  }
+}
+.shopContainer{
+  margin-top: 365px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  @include breakpoints.desktop_extra_small{
+    margin-top: 204px;
+    gap: 35px;
+
+  }
+  @include breakpoints.tablet_small{
+    margin-top: 170px;
+
+  }
+  @include breakpoints.mobile{
+    gap: 25px;
+
+  }
+}
+
+.title{
+  font-size: 40px;
+  @include breakpoints.desktop_extra_small{
+    font-size: 24px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 16px;
+  }
+  @include breakpoints.mobile{
+    font-size: 14px;
+  }
+
+
+
+}
+.loader{
+  &::before{
+    content: url("@assets/icons/loading.svg");
+    @include breakpoints.desktop_extra_small{
+      content: url("@assets/icons/loading1000.svg");
+    }
+    @include breakpoints.tablet{
+      content: url("@assets/icons/loading768.svg");
+    }
+    @include breakpoints.mobile{
+      content: url("@assets/icons/loading360.svg");
+    }
+  }
+
+}
+.button{
+  font-size: 24px;
+  min-width: 302px;
+  padding: 20px 80px;
+  @include breakpoints.desktop_extra_small{
+    font-size: 14px;
+    min-width: 163px;
+    padding: 10px 40px;
+  }
+  @include breakpoints.tablet{
+    font-size: 12px;
+    min-width: 131px;
+    padding: 8px 30px;
+  }
+
+}

@@ -1,0 +1,107 @@
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/breakpoints';
+
+.calendarWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 117px;
+  padding-bottom: 117px;
+
+  &Title{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 64px;
+    @include fontsFamilies.FontFamilyTttravelsBold;
+
+    &::after{
+      position: absolute;
+      top: -13px;
+      left: 38px;
+      z-index: -1;
+      @include fontsFamilies.FontFamilyTttravelsExtrabold;
+      font-size: 96px;
+      color: colors.$gray24;
+      content: 'КАЛЕНДАРЬ СОБЫТИЙ';
+
+    }
+    &::before{
+      content: url("@assets/icons/lessSign.svg");
+      @include breakpoints.desktop_base{
+        content: url("@assets/icons/lessSign1000.svg");
+
+      }
+      @include breakpoints.tablet_small{
+        content: url("@assets/icons/lessSign768.svg");
+      }
+      @include breakpoints.mobile_middle{
+        content: url("@assets/icons/lessSign360.svg");
+      }
+    }
+  }
+}
+.calendarInformationWrapper{
+  margin-top: 87px;
+  margin-bottom: 60px;
+  background-color: colors.$gray30;
+  border-radius: 25px;
+  padding: 27px 29px;
+
+  .btnWrapper{
+    display: flex;
+    gap: 47px;
+    justify-content: center;
+    align-items: center;
+
+    .arrowLeft{
+      content: url("@assets/icons/arrowLeft.svg");
+      &:hover {
+        opacity: 0.8;
+      }
+
+    }
+    .arrowRight{
+      content: url("@assets/icons/arrowRight.svg");
+      &:hover {
+        opacity: 0.8;
+      }
+
+
+    }
+    .btnWrapperTitle{
+      font-size: 32px;
+    }
+  }
+}
+.calendarItemContainer{
+  //display: flex;
+  gap: 10px;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-template-rows: repeat(5,1fr);
+}
+
+.calendarItemWrapper{
+  display: flex;
+  //flex-wrap: wrap;
+  &::before {
+    content: '';
+    padding-top: 85.5%;
+  }
+
+  background-color: colors.$gray1E;
+  border-radius: 14px;
+}
+.calendarFooter{
+  display: flex;
+  justify-content: end;
+  @include fontsFamilies.FontFamilyGilroyLight;
+  font-size: 24px;
+}
+
+
+

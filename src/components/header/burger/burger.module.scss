@@ -1,0 +1,68 @@
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/breakpoints';
+.overlay{
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background-color: colors.$gray1E;
+  opacity: 0.6;
+  z-index: 100;
+}
+
+.burgerWrapper{
+  max-width: 300px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  padding: 23px 13px;
+  font-size: 13px;
+  gap: 36px;
+  background-color: colors.$black;
+}
+.btnClose{
+  width: 23px;
+  height: 23px;
+  background-color: colors.$black;
+  &::before{
+    content: url("@assets/icons/clouse.svg");
+  }
+}
+.burgerNavigation{
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.burgerContacts{
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.telegram{
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  &::before{
+    content: url("@assets/icons/telegram1000.svg");
+  }
+
+}
+.mail{
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  &::before{
+    content: url("@assets/icons/mail1000.svg");
+  }
+
+}

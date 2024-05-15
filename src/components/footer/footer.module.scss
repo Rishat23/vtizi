@@ -1,0 +1,175 @@
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/breakpoints';
+
+
+
+.footer{
+  background-color: colors.$black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include breakpoints.desktop_base{
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+  @include breakpoints.mobile{
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+
+  &ContentWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-size: 32px;
+    @include breakpoints.desktop_base{
+      gap: 4px;
+    }
+
+  }
+
+  .navigationWrapper{
+    display: flex;
+    gap: 186px;
+    @include breakpoints.desktop_base{
+      gap: 175px;
+    }
+    @include breakpoints.tablet_small{
+      gap: 65px;
+    }
+    @include breakpoints.mobile{
+      gap: 50px;
+    }
+  }
+
+  .menuContainerWrapper{
+    display: flex;
+    flex-direction: column;
+    gap:42px;
+    @include breakpoints.desktop_base{
+      gap: 13px;
+    }
+  }
+
+  .menuContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    @include breakpoints.desktop_base{
+      gap: 4px;
+      font-size: 18px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 14px;
+    }
+    @include breakpoints.mobile{
+      font-size: 12px;
+    }
+  }
+
+  .heading{
+    @include fontsFamilies.FontFamilyTttravelsBold;
+    font-size: 36px;
+    @include breakpoints.desktop_base{
+      font-size: 20px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 14px;
+    }
+  }
+
+.contactsContainerWrapper{
+  display: flex;
+flex-direction: column;
+  gap: 42px;
+  @include breakpoints.desktop_base{
+    gap: 13px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 16px;
+  }
+}
+
+  .contactsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    @include breakpoints.desktop_base{
+      gap: 4px;
+      font-size: 18px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 14px;
+    }
+    @include breakpoints.mobile{
+      font-size: 12px;
+    }
+
+    .telegram{
+      display: flex;
+      gap: 17px;
+      align-items: center;
+      @include breakpoints.desktop_base{
+        gap:4px;
+      }
+      &::before{
+        display: block;
+        content: url("@assets/icons/telegram.svg");
+        width: 36px;
+        height: 36px;
+        @include breakpoints.desktop_base{
+          content: url("@assets/icons/telegram1000.svg");
+          width: 20px;
+          height: 20px;
+        }
+        @include breakpoints.mobile{
+          content: url("@assets/icons/telegram360.svg");
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
+    .mail{
+      display: flex;
+      gap: 17px;
+      align-items: center;
+      @include breakpoints.desktop_base{
+        gap:4px;
+      }
+      &::before{
+        display: block;
+        content: url("@assets/icons/mail.svg");
+        width: 36px;
+        height: 36px;
+        @include breakpoints.desktop_base{
+          content: url("@assets/icons/mail1000.svg");
+          width: 20px;
+          height: 20px;
+        }
+        @include breakpoints.mobile{
+          content: url("@assets/icons/mail360.svg");
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .privacyPolicy{
+    display: flex;
+    justify-content: space-between;
+    @include breakpoints.desktop_base{
+      font-size: 18px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 14px;
+    }
+    @include breakpoints.mobile{
+      font-size: 12px;
+    }
+  }
+}
+

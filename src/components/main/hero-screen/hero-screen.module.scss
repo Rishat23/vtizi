@@ -1,0 +1,168 @@
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/helpers';
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/breakpoints';
+
+
+.heroScreenWrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::after{
+    content: '';
+    background: colors.$black url("@assets/images/main.svg") no-repeat;
+    background-position: center center;
+    background-position-y: 2px;
+    z-index: -10;
+
+    @include helpers.contain;
+
+    @include breakpoints.desktop_extra_small{
+      background: colors.$black url("@assets/images/main1000.svg") no-repeat;
+      left: 12px;
+      background-position: center center;
+
+    }
+    @include breakpoints.tablet{
+      left: 0;
+    }
+    @include breakpoints.tablet_small{
+      background: colors.$black url("@assets/images/main768.svg") no-repeat;
+      background-position: center center;
+    }
+    @include breakpoints.mobile_small{
+      background: colors.$black url("@assets/images/main360.svg") no-repeat;
+      background-position: center center;
+    }
+
+  }
+
+}
+
+.heroScreenContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 435px;
+  gap: 23px;
+
+  @include breakpoints.desktop_extra_small{
+    margin-top: 231px;
+    gap: 15px;
+  }
+  @include breakpoints.tablet_small{
+    margin-top: 190px;
+    gap: 7px;
+  }
+  @include breakpoints.mobile_small{
+      margin-top: 143px;
+      gap: 22px;
+    }
+
+  .titleContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.title{
+  @include fontsFamilies.FontFamilyTttravelsBold;
+  text-align: center;
+  font-size: 140px;
+
+  @include breakpoints.desktop_medium{
+    font-size: 100px;
+  }
+
+  @include breakpoints.desktop_extra_small{
+    font-size: 74px;
+    line-height: 77px;
+
+  }
+  @include breakpoints.tablet_small{
+    font-size: 56px;
+    line-height: 55px;
+  }
+  @include breakpoints.mobile{
+    font-size: 50px;
+  }
+  @include breakpoints.mobile_middle{
+    font-size: 34px;
+    line-height: 34px;
+  }
+  @include breakpoints.mobile_small{
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+
+}
+
+.text{
+  @include fontsFamilies.FontFamilyGilroyMedium;
+  font-size: 40px;
+  text-align: center;
+  @include breakpoints.desktop_extra_small{
+    font-size: 23px;
+    line-height: 29px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 16px;
+  }
+  @include breakpoints.mobile_middle{
+    font-size: 14px;
+  }
+  @include breakpoints.mobile_small{
+    font-size: 11px;
+  }
+}
+
+.buttonContainer{
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 225px;
+
+  @include breakpoints.desktop_extra_small{
+    gap: 130px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 108px;
+  }
+  @include breakpoints.mobile{
+    gap: 156px;
+
+  }
+  .btn {
+    @include breakpoints.desktop_extra_small{
+      padding: 10px 40px;
+      font-size: 14px;
+      min-width: 163px;
+    }
+    @include breakpoints.tablet_small{
+      padding: 8px 30px;
+      font-size: 12px;
+      min-width: 131px;
+    }
+    @include breakpoints.mobile{
+      font-size: 10px;
+      min-width: 120px;
+    }
+  }
+}
+
+.arrowDown{
+  &::before{
+    content: url("@assets/icons/arrowDown.svg");
+
+    @include breakpoints.desktop_extra_small{
+      content: url("@assets/icons/arrowDown1000.svg");
+    }
+    @include breakpoints.tablet_small{
+      content: url("@assets/icons/arrowDown768.svg");
+    }
+  }
+
+
+}

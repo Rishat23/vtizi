@@ -1,0 +1,36 @@
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/breakpoints';
+
+
+.navigationList{
+  display: flex;
+  gap: 40px;
+  font-size: 32px;
+  justify-content: center;
+  @include fontsFamilies.FontFamilyGilroyRegular;
+
+
+
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: rotate(90deg) translateY(200px); /* Поворот на 90 градусов */
+  z-index: 20;
+  @include breakpoints.desktop_large{
+    font-size: 18px;
+    transform: rotate(90deg) translateY(130px); /* Поворот на 90 градусов */
+  }
+  @include breakpoints.tablet{
+    font-size: 14px;
+    transform: rotate(90deg) translateY(108px); /* Поворот на 90 градусов */
+  }
+  @include breakpoints.mobile{
+    display: none;
+  }
+
+}
+
+.activeLink {
+  border-bottom: 3px solid colors.$white;
+}

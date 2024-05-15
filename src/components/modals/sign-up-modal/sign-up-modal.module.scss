@@ -1,0 +1,270 @@
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/breakpoints';
+@use '@assets/styles/mixins/helpers';
+
+
+.overlay{
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background-color: colors.$gray1E;
+  opacity: 0.6;
+  z-index: 100;
+}
+
+.input{
+  display: block;
+  height: 44px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: colors.$white;
+  background-color: colors.$gray40;
+  background-clip: padding-box;
+  border-radius: 2px;
+  letter-spacing: 0.4px;
+
+  @include breakpoints.desktop_small{
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  @include breakpoints.tablet_small{
+    padding: 0.375rem 0.375rem;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+  @include breakpoints.mobile{
+    max-width: 250px;
+    height: 22px;
+  }
+}
+
+.signUpContentWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  @include breakpoints.desktop_small{
+    gap: 40px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 32px
+  }
+}
+
+.signUpWrapper{
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1053px;
+  height: 565px;
+  display: flex;
+  flex-direction: column;
+
+
+  padding: 44px 77px;
+
+  @include breakpoints.desktop_small{
+    padding: 23px 50px;
+
+    width: 579px;
+    height: 334px;
+  }
+  @include breakpoints.tablet_small{
+    padding: 21px 39px;
+
+    width: 423px;
+    height: 237px;
+  }
+  @include breakpoints.mobile{
+    padding: 23px 24px;
+
+    width: 300px;
+    height: 327px;
+  }
+
+  &::after{
+    content: '';
+    background: black url("@assets/images/signUpBg.svg") no-repeat;
+    z-index: -10;
+    border-radius: 10px;
+    @include helpers.contain;
+
+    @include breakpoints.desktop_small{
+      background: black url("@assets/images/signUpBg1000.svg") no-repeat;
+
+    }
+    @include breakpoints.tablet_small{
+      background: black url("@assets/images/signUpBg768.svg") no-repeat;
+    }
+    @include breakpoints.mobile{
+      background: black url("@assets/images/signUpBg360.svg") no-repeat;
+    }
+  }
+
+}
+
+.signUpContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  @include breakpoints.desktop_small{
+    gap: 32px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 10px
+  }
+  @include breakpoints.mobile{
+    gap: 25px;
+  }
+
+}
+
+.title{
+  text-align: center;
+  font-size: 36px;
+  @include breakpoints.desktop_small{
+    font-size: 20px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 14px;
+  }
+  @include breakpoints.mobile{
+    font-size: 12px;
+  }
+}
+.text{
+  @include fontsFamilies.FontFamilyGilroyRegular;
+  font-size: 32px;
+  @include breakpoints.desktop_small{
+    font-size: 18px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 12px;
+  }
+}
+
+.signUpContent{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  @include breakpoints.desktop_small{
+    gap: 32px;
+  }
+  @include breakpoints.tablet_small{
+    gap: 21px
+  }
+
+}
+
+.mailWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.informationWrapper{
+  display: flex;
+  justify-content: space-between;
+  @include breakpoints.desktop_small{
+    gap: 47px;
+  }
+  @include breakpoints.mobile{
+    flex-direction: column;
+    justify-content: normal;
+    gap: 20px;
+  }
+
+
+}
+.inputWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+}
+
+
+
+
+.secondarySignUpWrapper{
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 423px;
+  height: 237px;
+  display: flex;
+  flex-direction: column;
+  @include breakpoints.mobile{
+    width: 300px;
+    height: 237px;
+  }
+
+  padding: 20px;
+
+  &::after{
+    content: '';
+    background: black url("@assets/images/signUpBg768.svg") no-repeat;
+    z-index: -10;
+    border-radius: 10px;
+
+    @include helpers.contain;
+  }
+
+  .successfullyWrapper{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 20px;
+
+    .successfullyTitle{
+      text-align: center;
+      @include breakpoints.mobile{
+        font-size: 14px;
+      }
+    }
+    .successfullyText{
+      text-align: center;
+      @include breakpoints.mobile{
+        font-size: 12px;
+      }
+    }
+  }
+}
+.buttonWrapper{
+  display: flex;
+  gap: 68px;
+  justify-content: end;
+  @include breakpoints.desktop_small{
+    gap: 33px;
+  }
+}
+.button{
+  @include breakpoints.desktop_small{
+  font-size: 14px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 12px;
+  }
+}
+.btn{
+  @include breakpoints.desktop_small{
+    min-width: 117px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  @include breakpoints.tablet_small{
+    min-width: 95px;
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+
+}

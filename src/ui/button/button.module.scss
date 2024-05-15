@@ -1,0 +1,64 @@
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/vars/colors';
+
+.btn {
+  display: block;
+  @include fontsFamilies.FontFamilyTttravelsMedium;
+  font-size: 24px;
+  text-align: center;
+
+  &SizeS {
+    padding: 0 0;
+  }
+
+
+  &SizeM {
+    min-width: 170px;
+    padding: 13px 31px;
+    border-radius: 30px;
+
+  }
+  &SizeL{
+    padding: 20px 80px;
+    border-radius: 30px;
+
+  }
+
+
+  &Primary {
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    &:hover {
+      opacity: 0.8;
+      color: colors.$black;
+      background-color: colors.$white;
+    }
+  }
+
+  &Secondary {
+    background: colors.$white;
+    color: colors.$black;
+
+    &:hover {
+      background: transparent;
+      color: colors.$white;
+      border: 1px solid colors.$white;
+    }
+  }
+
+  &Outlined{
+    @include fontsFamilies.FontFamilyTttravelsRegular;
+
+    background-color: transparent;
+    color: colors.$white;
+    text-decoration: underline 1.5px colors.$white ;
+    //border-bottom: 1px solid colors.$white;
+  }
+
+
+
+  //&:disabled, &.btnDisabled {
+  //  background-color: transparent;
+  //  color: colors.$white;
+  //}
+}

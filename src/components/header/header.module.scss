@@ -1,0 +1,58 @@
+@use '@assets/styles/mixins/breakpoints';
+
+.header{
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 40px;
+  @include breakpoints.desktop_extra_small{
+    margin-top: 23px;
+  }
+  &ContentWrapper{
+    display: flex;
+    justify-content: end;
+    @include breakpoints.mobile{
+      justify-content: space-between;
+
+    }
+
+  }
+  .btnWrapper{
+    display: flex;
+    gap: 28px;
+    @include breakpoints.desktop_extra_small{
+      gap: 14px;
+    }
+
+  }
+  .btn{
+    @include breakpoints.desktop_extra_small{
+      padding: 11px 19px;
+      font-size: 12px;
+      min-width: 78px;
+
+    }
+    @include breakpoints.tablet_small{
+      padding: 9px 27px;
+      font-size: 10px;
+      min-width: 78px;
+
+    }
+    @include breakpoints.mobile{
+      padding: 8px 14px;
+      min-width: 76px;
+
+
+    }
+  }
+}
+.burger{
+  background-color: #0b0b0b;
+
+  &::before{
+    content: url("@assets/icons/burger.svg");
+    width: 23px;
+    height: 23px;
+  }
+
+}

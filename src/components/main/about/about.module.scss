@@ -1,0 +1,373 @@
+@use '@assets/styles/vars/colors';
+@use '@assets/styles/mixins/fontsFamilies';
+@use '@assets/styles/mixins/breakpoints';
+@use '@assets/styles/mixins/helpers';
+
+.aboutWrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 107px;
+  padding-bottom: 86px;
+
+
+  &::after {
+    content: '';
+    background: colors.$black14 url("@assets/images/about.svg") no-repeat;
+
+    z-index: -10;
+    @include helpers.contain;
+
+    @include breakpoints.desktop_extra_small{
+      background: colors.$black14 url("@assets/images/about1000.svg") no-repeat;
+      background-position-x: 24px ;
+    }
+    @include breakpoints.tablet_small{
+      background: colors.$black14 url("@assets/images/about768.svg") no-repeat;
+    }
+    @include breakpoints.mobile_small{
+      background: colors.$black14 url("@assets/images/about360.svg") no-repeat;
+
+    }
+
+  }
+  @include breakpoints.desktop_base{
+    padding-top: 52px;
+    padding-bottom: 41px;
+  }
+  @include breakpoints.tablet_small{
+    padding-top: 32px;
+    padding-bottom: 29px;
+  }
+  @include breakpoints.mobile_middle{
+    padding-top: 25px;
+    padding-bottom: 13px;
+  }
+}
+
+.aboutWrapperTitle{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @include fontsFamilies.FontFamilyTttravelsBold;
+  font-size: 64px;
+  @include breakpoints.desktop_base{
+    font-size: 32px;
+  }
+  @include breakpoints.tablet_small{
+    font-size: 24px;
+  }
+  @include breakpoints.mobile_middle{
+    font-size: 16px;
+    gap: 3px;
+  }
+
+
+  &::after{
+    position: absolute;
+    top: -13px;
+    left: 38px;
+    z-index: -1;
+    @include fontsFamilies.FontFamilyTttravelsExtrabold;
+    font-size: 96px;
+    color: colors.$gray24;
+    content: 'О CTF';
+    @include breakpoints.desktop_base{
+      top: -7px;
+      left: 25px;
+      font-size: 48px;
+    }
+    @include breakpoints.tablet_small{
+      top: -4px;
+      left: 25px;
+      font-size: 36px;
+    }
+    @include breakpoints.mobile_middle{
+      font-size: 24px;
+      left: 11px;
+
+    }
+
+  }
+  &::before{
+    content: url("@assets/icons/lessSign.svg");
+    @include breakpoints.desktop_base{
+      content: url("@assets/icons/lessSign1000.svg");
+
+    }
+    @include breakpoints.tablet_small{
+      content: url("@assets/icons/lessSign768.svg");
+    }
+    @include breakpoints.mobile_middle{
+      content: url("@assets/icons/lessSign360.svg");
+    }
+  }
+
+}
+
+.aboutContentWrapper {
+
+}
+.aboutInformationWrapper{
+  margin-top: 86px;
+
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 49px;
+  border: 1px solid colors.$white;
+  border-radius: 16px;
+  font-size: 32px;
+  @include breakpoints.desktop_large{
+    max-width: 95%;
+  }
+  @include breakpoints.desktop_base{
+    margin-top: 52px;
+
+
+    padding: 22px 27px;
+    font-size: 24px;
+  }
+  @include breakpoints.desktop_extra_small{
+    max-width: 90%;
+
+    font-size: 20px;
+
+  }
+  @include breakpoints.tablet{
+    font-size: 17px;
+  }
+  @include breakpoints.tablet_small{
+    margin-top: 39px;
+    padding: 25px 16px;
+
+    font-size: 14px;
+
+  }
+  @include breakpoints.mobile{
+    max-width: 100%;
+  }
+  @include breakpoints.mobile_middle{
+    font-size: 12px;
+    padding: 25px 25px;
+
+  }
+
+
+
+  &Title{
+    @include fontsFamilies.FontFamilyTttravelsBoldLight;
+  }
+  &Text{
+    @include fontsFamilies.FontFamilyTttravelsLight;
+  }
+}
+
+.kindsCTFWrapper{
+  margin-top: 43px;
+  @include breakpoints.tablet_small{
+    margin-top: 29px;
+  }
+  @include breakpoints.mobile_middle{
+    margin-top: 13px;
+  }
+
+
+  &Text{
+    @include fontsFamilies.FontFamilyTttravelsLight;
+    font-size: 36px;
+    @include breakpoints.desktop_base{
+      font-size: 24px;
+    }
+    @include breakpoints.desktop_extra_small{
+      font-size: 20px;
+    }
+    @include breakpoints.tablet{
+      font-size: 17px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 15px;
+    }
+    @include breakpoints.mobile_middle{
+      font-size: 13px;
+    }
+
+
+
+  }
+}
+
+.kindsCTFList{
+  margin-top: 61px;
+  display: flex;
+
+  gap: 20px;
+  @include breakpoints.desktop_base{
+    margin-top: 50px;
+  }
+  @include breakpoints.tablet_small{
+    margin-top: 31px;
+    flex-direction: column;
+    gap: 25px;
+  }
+  @include breakpoints.mobile_middle{
+    margin-top: 15px;
+
+  }
+
+  &Item{
+    display: flex;
+    gap: 22px;
+    width: calc((100% - 44px)  / 3);
+    @include breakpoints.desktop_extra_small{
+      width: calc((100% - 30px)  / 3);
+      gap: 15px;
+
+    }
+    @include breakpoints.tablet{
+      width: calc((100% - 20px)  / 3);
+      gap: 10px;
+    }
+    @include breakpoints.tablet_small{
+      width: 100%;
+      gap: 7px;
+      display: flex;
+      align-items: center;
+    }
+
+
+  }
+  &Item::before {
+    margin-top: 34px;
+    @include breakpoints.tablet{
+      margin-top: 17px;
+    }
+    @include breakpoints.tablet_small{
+      margin-top: 0;
+    }
+
+  }
+  &Item:nth-child(1)::before{
+    content: url("@assets/icons/one.svg");
+    @include breakpoints.desktop_large{
+      display: none;
+    }
+    @include breakpoints.desktop_base{
+      display: unset;
+      content: url("@assets/icons/one1000.svg");
+    }
+    @include breakpoints.tablet{
+      content: url("@assets/icons/one768.svg");
+    }
+  }
+  &Item:nth-child(2){
+
+    @include breakpoints.tablet_small {
+      flex-direction: row-reverse;
+    }
+
+    &::before {
+      content: url("@assets/icons/two.svg");
+      @include breakpoints.desktop_large{
+        display: none;
+      }
+      @include breakpoints.desktop_base{
+        display: unset;
+        content: url("@assets/icons/two1000.svg");
+      }
+      @include breakpoints.tablet{
+        content: url("@assets/icons/two768.svg");
+      }
+    }
+  }
+
+  &Item:nth-child(3)::before{
+    content: url("@assets/icons/tree.svg");
+    @include breakpoints.desktop_large{
+      display: none;
+    }
+    @include breakpoints.desktop_base{
+      display: unset;
+
+      content: url("@assets/icons/tree1000.svg");
+    }
+    @include breakpoints.tablet{
+      content: url("@assets/icons/tree768.svg");
+    }
+
+  }
+
+}
+
+
+
+.aboutFooterWrapper{
+  margin-top: 108px;
+  @include breakpoints.desktop_base{
+    margin-top: 75px;
+  }
+  @include breakpoints.tablet_small{
+    margin-top: 69px;
+  }
+  @include breakpoints.mobile_middle{
+    margin-top: 29px;
+  }
+
+  &Text{
+    @include fontsFamilies.FontFamilyTttravelsLight;
+    font-size: 36px;
+    @include breakpoints.desktop_base{
+      font-size: 24px;
+    }
+    @include breakpoints.desktop_extra_small{
+      font-size: 20px;
+    }
+    @include breakpoints.tablet{
+      font-size: 17px;
+    }
+    @include breakpoints.tablet_small{
+      font-size: 15px;
+    }
+    @include breakpoints.mobile_middle{
+      font-size: 13px;
+
+    }
+  }
+}
+
+.kindsCTFListItemText{
+  display: flex;
+  padding: 43px 30px;
+  align-items: center;
+
+
+  align-content: center;
+  background-color: #5454541A;
+  border: 1px solid colors.$white ;
+  border-radius: 51px;
+
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  @include fontsFamilies.FontFamilyTttravelsBold;
+
+  font-size: 24px;
+  @include breakpoints.desktop_base{
+    border-radius: 19px;
+
+    padding: 28px 14px;
+
+    font-size: 17px;
+  }
+  @include breakpoints.desktop_small{
+    font-size: 13px;
+  }
+  @include breakpoints.desktop_extra_small{
+    font-size: 12px;
+  }
+  @include breakpoints.tablet{
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
